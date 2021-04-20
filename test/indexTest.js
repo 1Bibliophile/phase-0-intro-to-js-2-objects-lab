@@ -1,11 +1,17 @@
-describe('employees', function() {
+/*describe('employees', function() {
   describe('updateEmployeeWithKeyAndValue(employee, key, value)', function () {
     beforeEach(function () {
       for (const key in employee) {
         delete employee[key];
       }
+      
+      const employee = 
+      {
+          name: 'Sam'
+      };
 
-      employee.name = 'Sam';
+      //employee = updateEmployeeWithKeyAndValue(employee, key, value);
+
     });
 
     it('returns an employee with the original key value pairs and the new key value pair', function () {
@@ -13,6 +19,23 @@ describe('employees', function() {
         name: 'Sam',
         streetAddress: '11 Broadway'
       });
+
+      /*
+      function updateEmployee(employee, key, value)
+      {
+          const employee1 = { ...employee};
+          
+          employee1 =
+          {
+              name: 'Sam',
+              streetAddress: '11 Broadway'
+          };
+
+          return employee1;
+      }
+      
+
+
     });
 
     it('it does not modify the original employee, but rather returns a clone with the new data', function () {
@@ -66,3 +89,81 @@ describe('employees', function() {
     });
   });
 });
+*/
+
+function workplace()
+{
+    const employee =
+    {
+        name: 'Sam',
+        streetAddress
+    };
+    /*beforeEach(function ()
+    {
+      for (const key in employee) 
+      {
+          delete employee[key];
+      }
+    
+    */
+    
+    const tempEmployee = { ...employee};
+    
+    
+    //Error 1
+    tempEmployee = updateEmployeeWithKeyAndValue(tempEmployee, 'name', 'streetAddress');
+    
+    //Error 2
+    tempEmployee = destructivelyUpdateEmployeeWithKeyAndValue(tempEmployee, 'name');
+
+    //Error 3
+    tempEmployee = { ...employee};
+    tempEmployee = deleteFromEmployeeByKey(tempEmployee, 'streetAddress');
+
+    //Error 4
+    tempEmployee = { ...employee};
+    tempEmployee = updateEmployeeWithKeyAndValue(tempEmployee, 'name', 'streetAddress');
+    tempEmployee = destructivelyUpdateEmployeeWithKeyAndValue(tempEmployee, 'streetAddress');
+    
+}
+
+// Error 1
+function updateEmployeeWithKeyAndValue(tempEmployee, name, streetAddress)
+{
+    const employee1 = {...tempEmployee};
+    employee1.streetAddress = '11 Broadway';
+
+    return employee1;
+}
+
+//Error 2
+function destructivelyUpdateEmployeeWithKeyAndValue(tempEmployee, name, streetAddress)
+{
+    const employee = tempEmployee;
+    employee.streetAddress = '11 Broadway';
+    return employee;
+
+}
+
+//Error 3
+function deleteFromEmployeeByKey(tempEmployee, streetAddress)
+{
+    const employee = {...tempEmployee};
+    
+    delete employee.streetAddress;
+
+    return employee;
+}
+
+//Error 4
+function destructivelyDeleteFromEmployeeByKey(tempEmployee, streetAddress)
+{
+    const employee = tempEmployee;
+    delete employee.streetAddress;
+
+    return employee;
+
+
+}
+
+
