@@ -1,4 +1,4 @@
-/*describe('employees', function() {
+describe('employees', function() {
   describe('updateEmployeeWithKeyAndValue(employee, key, value)', function () {
     beforeEach(function () {
       for (const key in employee) {
@@ -10,7 +10,7 @@
           name: 'Sam'
       };
 
-      //employee = updateEmployeeWithKeyAndValue(employee, key, value);
+      employee = updateEmployeeWithKeyAndValue(employee, key, value);
 
     });
 
@@ -20,19 +20,8 @@
         streetAddress: '11 Broadway'
       });
 
-      /*
-      function updateEmployee(employee, key, value)
-      {
-          const employee1 = { ...employee};
-          
-          employee1 =
-          {
-              name: 'Sam',
-              streetAddress: '11 Broadway'
-          };
-
-          return employee1;
-      }
+      
+      
       
 
 
@@ -89,8 +78,8 @@
     });
   });
 });
-*/
 
+/*
 function workplace()
 {
     const employee =
@@ -98,14 +87,14 @@ function workplace()
         name: 'Sam',
         streetAddress
     };
-    /*beforeEach(function ()
+    beforeEach(function ()
     {
       for (const key in employee) 
       {
           delete employee[key];
       }
     
-    */
+    
     
     const tempEmployee = { ...employee};
     
@@ -165,5 +154,5 @@ function destructivelyDeleteFromEmployeeByKey(tempEmployee, streetAddress)
 
 
 }
-
+*/
 
